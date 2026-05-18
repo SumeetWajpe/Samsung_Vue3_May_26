@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      // destructuring (Arrays & Object)
+      //   var cars = ["BMW", "AUDI", "MERC"];
+      //   var firstCar = cars[0];
+      //   var secondCar = cars[1];
+
+      // OR
+
+      //   var [firstCar, secondCar, thirdCar, fourthCar = "Unknown"] = cars;
+
+      // Object
+
+      //   var person = {
+      //     name: "Alcaraz",
+      //     sport: "Tennis",
+      //     stats: {
+      //       matches: 100,
+      //       isSeeded: true,
+      //       worldRanking: 2,
+      //     },
+      //   };
+      //   //   let sport = person.sport;
+      //   let {
+      //     sport,
+      //     stats: { worldRanking },
+      //     country = "Spain",
+      //   } = person;
+
+      // Spread Operator (Arrays & Object)
+
+      var cars = ["BMW", "AUDI", "MERC"];
+      var moreCars = ["TATA", "MARUTI"];
+      var allCars = [...cars, ...moreCars];
+
+      // With Object
+      var person = { name: "Djokovic", sport: "Tennis" };
+
+      var player = { country: "Serbia", sport: "Lawn Tennis", ...person };
+
+      //Arrow Functions / Lambda functions
+
+      function Add(x, y) {
+        return x + y;
+      }
+
+      // Arrow
+      var Add = (x, y) => x + y;
+      console.log(`The addition is ${Add(20, 30)}`);
+
+      function CallBack() {
+        console.log(this);
+      }
+
+      function Emp() {
+        this.salary = 200000;
+        setTimeout(CallBack, 3000);
+      }
+
+      //   class Emp {
+      //     salary = 200000;
+      //     getSalary() {
+      //       setTimeout(function () {
+      //         console.log(this.salary);
+      //       }, 3000);
+      //     }
+      //   }
+
+      // var emp = new Emp();
+      //   emp.getSalary();
+
+      // Enhanced Object Literal
+      let fname = "Jannik";
+      let lname = "Sinner";
+      //   let anotherPlayer = { fname: fname, lname: lname };
+      // OR
+      let anotherplayer = { fname, lname };
+
+      // Promise => object thats points to async operation and its resulting value
+
+      //   function GetPromise() {
+      //     return new Promise((resolve, reject) => {
+      //       setTimeout(function () {
+      //         // resolve("success after 2 seconds !");
+      //         reject("Something went wrong !");
+      //       }, 2000);
+      //     });
+      //   }
+
+      //   console.log("Started..");
+
+      //   let thePromise = GetPromise();
+      //   thePromise.then(
+      //     msg => {
+      //       console.log(msg);
+      //     },
+      //     err => {
+      //       console.log(err);
+      //     },
+      //   );
+      //   console.log("Ended..");
+
+      //   async function GetData() {
+      //     try {
+      //       let msg = await GetPromise();
+      //       console.log(msg);
+      //     } catch (error) {
+      //       console.log(error);
+      //     }
+      //   }
+
+      //   GetData();
+      //   console.log("Ended..");
+
+      setTimeout(function () {
+        console.log("Printed after 0 ms");
+      }, 0);
+
+      let thePromise = new Promise((resolve, reject) => {
+        resolve("success");
+      });
+      thePromise.then(msg => console.log(msg));
+    </script>
+  </head>
+  <body></body>
+</html>
