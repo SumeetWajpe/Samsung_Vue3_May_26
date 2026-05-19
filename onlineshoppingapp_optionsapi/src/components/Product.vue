@@ -1,11 +1,14 @@
 <template>
-    <img v-bind:src="productdetails.imageUrl" v-bind:alt="productdetails.title" width="200">
+    <img :src="productdetails.imageUrl" v-bind:alt="productdetails.title" width="200">
     <h2>
         {{ productdetails.title }}
     </h2>
     <p>{{ productdetails.price }}</p>
-    <p>{{ productdetails.likes }}</p>
     <p>{{ productdetails.rating }}</p>
+    <button @click="IncrementLikes">{{ productdetails.likes }}</button>
+    <button v-on:click="IncrementCount">{{ count }}</button>
+
+
 
 </template>
 <script>
@@ -17,6 +20,18 @@ export default {
             required: true,
         },
 
+    }, data() {
+        return {
+            count: 0
+        }
+    },
+    methods: {
+        IncrementCount() {
+            this.count += 1
+        },
+        IncrementLikes() {
+            this.productdetails.likes += 1
+        }
     }
 }
 </script>
