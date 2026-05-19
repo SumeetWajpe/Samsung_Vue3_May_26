@@ -1,18 +1,19 @@
 <template>
     <h2>
-        {{ title }}
+        {{ productdetails.title }}
     </h2>
+    <p>{{ productdetails.price }}</p>
+    <p>{{ productdetails.likes }}</p>
+    <p>{{ productdetails.rating }}</p>
+
 </template>
 <script>
 export default {
     name: 'Product',
     props: {
-        title: {
-            type: String,
+        productdetails: {
+            type: Object, // Product (model)
             required: true,
-            // default() {
-            //     return "Default"
-            // }
         },
 
     }
