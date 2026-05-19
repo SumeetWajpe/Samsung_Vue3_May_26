@@ -44,7 +44,7 @@ export default {
 <style>
 .productItem {
     border: 1px solid grey;
-    border-radius: 5px;
+    border-radius: 10px;
     box-shadow: 5px 5px 5px darkgray;
     padding: 10px;
     margin: 5px;
