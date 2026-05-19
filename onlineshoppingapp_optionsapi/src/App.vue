@@ -13,5 +13,6 @@ export default {
 <template>
   <Product name="Mobile" />
   <Product name="Camera" />
+  <Product name="Laptop" />
 
 </template>
