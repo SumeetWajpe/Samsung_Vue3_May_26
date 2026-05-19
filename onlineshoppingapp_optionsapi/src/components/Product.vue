@@ -1,4 +1,5 @@
 <template>
+    <img v-bind:src="productdetails.imageUrl" v-bind:alt="productdetails.title" width="200">
     <h2>
         {{ productdetails.title }}
     </h2>
