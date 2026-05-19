@@ -5,14 +5,22 @@ export default {
   name: "App",
   components: {
     Product
+  },
+  data() {
+    return {
+      title: "Mobile"
+    }
   }
 }
 
-</script>
 
+// price , rating , likes:100
+
+</script>
 <template>
-  <Product name="Mobile" />
-  <Product name="Camera" />
-  <Product name="Laptop" />
+  <Product :title="title" />
+  <Product title="Camera" />
+  <Product title="Laptop" />
+  <p>{{ title }}</p>
 
 </template>

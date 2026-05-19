@@ -1,15 +1,18 @@
 <template>
     <h2>
-        {{ name }}
+        {{ title }}
     </h2>
 </template>
 <script>
 export default {
     name: 'Product',
     props: {
-        name: {
+        title: {
             type: String,
-            required: true
+            required: true,
+            // default() {
+            //     return "Default"
+            // }
         },
 
     }
