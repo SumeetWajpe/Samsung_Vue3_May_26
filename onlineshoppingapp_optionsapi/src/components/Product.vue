@@ -5,11 +5,8 @@
     </h2>
     <p>{{ productdetails.price }}</p>
     <p>{{ productdetails.rating }}</p>
-    <button @click="IncrementLikes">{{ productdetails.likes }}</button>
-    <button v-on:click="IncrementCount">{{ count }}</button>
-
-
-
+    <button @click="IncrementLikes" class="btn btn-primary">{{ productdetails.likes }}</button>
+    <!-- <button v-on:click="IncrementCount">{{ count }}</button> -->
 </template>
 <script>
 export default {
