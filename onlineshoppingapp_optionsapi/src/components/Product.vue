@@ -23,7 +23,7 @@
         </p>
         <button @click="IncrementLikes" class="btn btn-primary">{{ productdetails.likes }}</button>
         <button class="btn btn-warning mx-1" :disabled="!productdetails.quantity">Add to cart</button>
-        <button class="btn btn-outline-danger" @click="deleteProductHandler()">Delete</button>
+        <button class="btn btn-outline-danger" @click="deleteProductHandler(productdetails.id)">Delete</button>
         <!-- <button v-on:click="IncrementCount">{{ count }}</button> -->
 
     </div>
@@ -55,8 +55,8 @@ export default {
         outofstock(value, text) {
             return value > 0 ? `${value} ${text}` : `Out Of Stock`;
         },
-        deleteProductHandler() {
-            this.$emit('delete-a-product')
+        deleteProductHandler(theId) {
+            this.$emit('delete-a-product', theId)
         }
     }, computed: {
         classesToBeApplied() {

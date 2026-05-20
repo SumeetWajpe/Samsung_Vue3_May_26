@@ -77,10 +77,12 @@ export default {
             this.message = event.target.value
         },
 
-        deleteAProduct() {
+        deleteAProduct(theId) {
             // logic to change array of 5 items to 4 items
             // remove the selected item from the listofcourses array
-            console.log("Deleting the product..")
+            // console.log("Deleting the product.."+theId)
+            let index = this.products.findIndex(p => p.id == theId);
+            this.products.splice(index, 1);
         }
     }
 }
