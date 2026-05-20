@@ -1,7 +1,10 @@
 <template>
     <!-- <div class="productItem" :class="['outofstock',]"> -->
     <!-- <div class="productItem" :class="isSelected ? 'selectedItem' : ''"> -->
-    <div class="productItem" :class="classesToBeApplied">
+    <!-- <div class="productItem" :class="classesToBeApplied"> -->
+    <div class="productItem" :class="{ outofstock: !this.productdetails.quantity, selectedItem: isSelected }">
+
+
 
         <img :src="productdetails.imageUrl" v-bind:alt="productdetails.title" width="200" height="100"
             :style="productdetails.quantity ? '' : { opacity: 0.4 }">
@@ -20,6 +23,7 @@
         </p>
         <button @click="IncrementLikes" class="btn btn-primary">{{ productdetails.likes }}</button>
         <button class="btn btn-warning mx-1" :disabled="!productdetails.quantity">Add to cart</button>
+        <button class="btn btn-outline-danger" @click="deleteProductHandler()">Delete</button>
         <!-- <button v-on:click="IncrementCount">{{ count }}</button> -->
 
     </div>
@@ -33,7 +37,9 @@ export default {
             required: true,
         },
 
-    }, data() {
+    },
+    emits: ["delete-a-product"]
+    , data() {
         return {
             count: 0,
             isSelected: false
@@ -48,6 +54,9 @@ export default {
         },
         outofstock(value, text) {
             return value > 0 ? `${value} ${text}` : `Out Of Stock`;
+        },
+        deleteProductHandler() {
+            this.$emit('delete-a-product')
         }
     }, computed: {
         classesToBeApplied() {

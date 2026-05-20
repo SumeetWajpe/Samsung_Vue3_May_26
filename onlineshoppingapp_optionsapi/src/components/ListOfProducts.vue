@@ -8,7 +8,7 @@
 
         <div class="row">
             <div class="col-md-3" v-for="product in products">
-                <Product :productdetails="product" />
+                <Product :productdetails="product" @delete-a-product="deleteAProduct" />
             </div>
         </div>
 
@@ -72,11 +72,17 @@ export default {
             }]
         }
     },
-    // methods: {
-    //     ChangeMessage(event) {
-    //         this.message = event.target.value
-    //     }
-    // }
+    methods: {
+        ChangeMessage(event) {
+            this.message = event.target.value
+        },
+
+        deleteAProduct() {
+            // logic to change array of 5 items to 4 items
+            // remove the selected item from the listofcourses array
+            console.log("Deleting the product..")
+        }
+    }
 }
 </script>
 
