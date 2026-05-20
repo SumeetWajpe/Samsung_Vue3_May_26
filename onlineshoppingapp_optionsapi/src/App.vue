@@ -1,11 +1,12 @@
 <script>
 import ListOfProducts from './components/ListOfProducts.vue';
+import Posts from './components/posts.vue';
 import Product from './components/Product.vue';
 
 export default {
   name: "App",
   components: {
-    ListOfProducts
+    ListOfProducts, Posts
   },
 
 }
@@ -16,10 +17,12 @@ export default {
 </script>
 <template>
 
-  <header>
-    <h1>Online Shopping App </h1>
-  </header>
 
-  <ListOfProducts />
+  <Posts />
+  <!-- <header>
+    <h1>Online Shopping App </h1>
+  </header> -->
+
+  <!-- <ListOfProducts /> -->
 
 </template>
