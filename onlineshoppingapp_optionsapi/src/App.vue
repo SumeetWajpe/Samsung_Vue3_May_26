@@ -16,6 +16,9 @@ export default {
 </script>
 <template>
 
+  <header>
+    <h1>Online Shopping App </h1>
+  </header>
 
   <ListOfProducts />
 

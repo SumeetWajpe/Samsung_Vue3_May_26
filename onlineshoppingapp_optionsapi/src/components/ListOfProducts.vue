@@ -3,9 +3,8 @@
 
     <div>
 
-        <label for="txtName">Enter Name :</label> <input type="text" id="txtName" :value="message"
-            v-on:input="ChangeMessage">
-        <h2>{{ message }}</h2>
+        <!-- <label for="txtName">Enter Message :</label> <input type="text" id="txtName" v-model="message">
+        <h2>{{ message }}</h2> -->
 
         <div class="row">
             <div class="col-md-3" v-for="product in products">
@@ -73,11 +72,11 @@ export default {
             }]
         }
     },
-    methods: {
-        ChangeMessage(event) {
-            this.message = event.target.value
-        }
-    }
+    // methods: {
+    //     ChangeMessage(event) {
+    //         this.message = event.target.value
+    //     }
+    // }
 }
 </script>
 
