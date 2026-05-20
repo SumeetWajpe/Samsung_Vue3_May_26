@@ -1,11 +1,21 @@
 <template>
 
-    <div class="row">
-        <div class="col-md-3" v-for="product in products">
-            <Product :productdetails="product" />
-        </div>
-    </div>
 
+    <div>
+
+        <label for="txtName">Enter Name :</label> <input type="text" id="txtName" :value="message"
+            v-on:input="ChangeMessage">
+        <h2>{{ message }}</h2>
+
+        <div class="row">
+            <div class="col-md-3" v-for="product in products">
+                <Product :productdetails="product" />
+            </div>
+        </div>
+
+
+
+    </div>
 
 </template>
 
@@ -19,6 +29,7 @@ export default {
     },
     data() {
         return {
+            message: "Hello",
             products: [{
                 id: 1,
                 title: "Laptop",
@@ -60,6 +71,11 @@ export default {
                 imageUrl: "https://images-na.ssl-images-amazon.com/images/I/813CAX2%2BtQL._SL1500_.jpg",
                 likes: 100
             }]
+        }
+    },
+    methods: {
+        ChangeMessage(event) {
+            this.message = event.target.value
         }
     }
 }
