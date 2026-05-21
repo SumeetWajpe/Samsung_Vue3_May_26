@@ -7,14 +7,14 @@
         <h2>{{ message }}</h2> -->
 
         <div class="row">
-            <div class="col-md-3" v-for="product in products">
+            <div class="col-md-3" v-for="product in products" :key="product.id">
                 <Product :productdetails="product" @delete-a-product="deleteAProduct" />
             </div>
         </div>
 
 
 
-    </div>
+    </div>o
 
 </template>
 

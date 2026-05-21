@@ -18,11 +18,11 @@ export default {
 <template>
 
 
-  <Posts />
+  <!-- <Posts /> -->
   <!-- <header>
     <h1>Online Shopping App </h1>
   </header> -->
 
-  <!-- <ListOfProducts /> -->
+  <ListOfProducts />
 
 </template>

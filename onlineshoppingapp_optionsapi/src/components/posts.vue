@@ -7,7 +7,7 @@
         </div>
         <div v-else>
             <ul class="list-group">
-                <li class="list-group-item" v-for="post in postList">{{ post.title }}</li>
+                <li class="list-group-item" v-for="post in postList" :key="post.id">{{ post.title }}</li>
             </ul>
         </div>
 
