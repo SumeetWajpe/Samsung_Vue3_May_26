@@ -53,7 +53,7 @@ export default class ProductService {
             likes: 100,
           },
         ]);
-      });
+      }, 2000);
     });
   }
 }
