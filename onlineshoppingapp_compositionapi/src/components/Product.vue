@@ -21,9 +21,10 @@
                 :for="'chkCart-' + productdetails.id">Add To
                 Wishlist</label>
         </p>
-        <button @click="IncrementLikes" class="btn btn-primary">{{ productdetails.likes }}</button>
+        <button @click="IncrementLikes" class="btn btn-primary p-1">{{ productdetails.likes }}<i
+                class="fa-regular fa-thumbs-up"></i></button>
         <button class="btn btn-warning mx-1" :disabled="!productdetails.quantity">Add to cart</button>
-        <button class="btn btn-outline-danger">Delete</button>
+        <button class="btn btn-outline-danger">Delete <i class="fa-solid fa-trash"></i></button>
 
     </div>
 </template>
