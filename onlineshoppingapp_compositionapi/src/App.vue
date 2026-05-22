@@ -10,6 +10,6 @@ import Posts from "./components/Posts.vue";
 </script>
 
 <template>
-  <!-- <ListOfProducts /> -->
-  <Posts />
+  <ListOfProducts />
+  <!-- <Posts /> -->
 </template>
