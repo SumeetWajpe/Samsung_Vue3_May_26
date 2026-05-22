@@ -29,9 +29,8 @@ const { loading, startLoading, stopLoading } = useLoading();
 const fetchProducts = async () => {
     try {
         startLoading();
-        let productsResposne = await getProducts();
-        console.log(productsResposne)
-        products = productsResposne;
+        let productsResponse = await getProducts();
+        products = productsResponse;
     } catch (error) {
         console.log("Error : " + error)
     } finally {

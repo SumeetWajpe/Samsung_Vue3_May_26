@@ -15,13 +15,15 @@
         <p :class="productdetails.quantity ? 'text-success' : 'text-danger fw-bold'">{{
             outofstock(productdetails.quantity, 'nos') }}</p>
 
-        <p>{{ productdetails.rating }}</p>
+        <p>
+            <Rating :rating="productdetails.rating" />
+        </p>
         <p>
             <input type="checkbox" :id="'chkCart-' + productdetails.id" v-model="isSelected"> <label
                 :for="'chkCart-' + productdetails.id">Add To
                 Wishlist</label>
         </p>
-        <button @click="IncrementLikes" class="btn btn-primary p-1">{{ productdetails.likes }}<i
+        <button @click="IncrementLikes" class="btn btn-primary p-1">{{ likes }}<i
                 class="fa-regular fa-thumbs-up"></i></button>
         <button class="btn btn-warning mx-1" :disabled="!productdetails.quantity">Add to cart</button>
         <button class="btn btn-outline-danger">Delete <i class="fa-solid fa-trash"></i></button>
@@ -30,6 +32,7 @@
 </template>
 <script setup>
 import { defineProps, ref } from 'vue';
+import Rating from './Rating.vue';
 const props = defineProps({
     productdetails: {
         type: Object,
@@ -37,10 +40,12 @@ const props = defineProps({
     }
 });
 
+const likes = ref(props.productdetails.likes);
+
 var isSelected = ref(false);
 
 function IncrementLikes() {
-    props.productdetails.likes += 1;
+    likes.value++;
 };
 function outofstock(value, text) {
     return value > 0 ? `${value} ${text}` : `Out Of Stock`;
@@ -62,4 +67,6 @@ function outofstock(value, text) {
 .outofstock {
     opacity: 0.4;
 }
+
+
 </style>
