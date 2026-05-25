@@ -8,7 +8,7 @@
         <div v-else>
             <ul class="list-group">
                 <li class="list-group-item" v-for="post in postList" :key="post.id">
-                    <RouterLink to="/postdetails">
+                    <RouterLink :to="{ name: 'postdetails', params: { postid: post.id } }">
                         {{ post.title }}
                     </RouterLink>
 

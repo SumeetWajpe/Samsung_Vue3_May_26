@@ -10,7 +10,7 @@ import PostDetails from "../components/PostDetails.vue";
 const routes = [
   { path: "/", component: ListOfProducts },
   { path: "/posts", component: Posts },
-  { path: "/postdetails", component: PostDetails },
+  { path: "/postdetails/:postid", component: PostDetails, name: "postdetails" },
 ];
 
 export const router = createRouter({
