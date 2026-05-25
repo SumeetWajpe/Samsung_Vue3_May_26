@@ -1,4 +1,6 @@
 <script setup>
+import Navbar from './components/Navbar.vue';
+
 
 
 
@@ -10,10 +12,12 @@
   <!-- <a href="/">Products</a> |
   <a href="/posts">Posts</a> -->
 
-  <nav>
+  <!-- <nav>
     <RouterLink to="/">Products</RouterLink> | 
     <RouterLink to="/posts">Posts</RouterLink>
-  </nav>
+  </nav> -->
+
+  <Navbar />
 
   <RouterView />
 </template>
