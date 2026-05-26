@@ -7,10 +7,15 @@
 </template>
 
 <script setup>
+import { onMounted } from 'vue';
 import { useProductStore } from '../store/productsStore';
 import Product from './Product.vue';
 
 const productStore = useProductStore();
+
+onMounted(() => {
+    productStore.fetchProducts()
+})
 
 </script>
 

@@ -29,9 +29,11 @@ import { useProductStore } from "../store/productsStore.js";
 const route = useRoute();
 const { params: { pid } } = route;
 const productStore = useProductStore();
-console.log(productStore)
 const product = productStore.products.find(p => p.id == pid);
-console.log(product)
+const IncrementLikes = () => {
+    productStore.incrementLikes(product.id);
+}
+
 
 </script>
 
