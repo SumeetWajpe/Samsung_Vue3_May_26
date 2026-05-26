@@ -6,14 +6,14 @@
 
 
 
-        <RouterLink :to="{
+        <!-- <RouterLink :to="{
             name: 'productdetails',
             params: { pid: productdetails.id }
-        }">
-            <img :src="productdetails.imageUrl" v-bind:alt="productdetails.title" width="200" height="100"
-                :style="productdetails.quantity ? '' : { opacity: 0.4 }">
+        }"> -->
+        <img :src="productdetails.imageUrl" v-bind:alt="productdetails.title" width="200" height="100"
+            :style="productdetails.quantity ? '' : { opacity: 0.4 }">
 
-        </RouterLink>
+        <!-- </RouterLink> -->
         <h2>
             {{ productdetails.title }}
         </h2>
@@ -30,22 +30,28 @@
                 :for="'chkCart-' + productdetails.id">Add To
                 Wishlist</label>
         </p>
-        <button @click="IncrementLikes" class="btn btn-primary p-1">{{ productdetails.likes }}<i
-                class="fa-regular fa-thumbs-up"></i></button>
+        <button class="btn btn-primary p-1">{{ productdetails.likes }}<i class="fa-regular fa-thumbs-up"></i></button>
         <button class="btn btn-warning mx-1" :disabled="!productdetails.quantity">Add to cart</button>
-        <button class="btn btn-outline-danger">Delete <i class="fa-solid fa-trash"></i></button>
+        <button class="btn btn-outline-danger" @click="removeProduct">Delete <i class="fa-solid fa-trash"></i></button>
 
     </div>
 </template>
 <script setup>
 import { defineProps, ref } from 'vue';
 // import Rating from './Rating.vue';
+import { useProductStore } from '../store/productsStore';
+
+const productStore = useProductStore();
 const props = defineProps({
     productdetails: {
         type: Object,
         required: true
     }
 });
+
+const removeProduct = () => {
+    productStore.deleteProduct(props.productdetails.id); // dispatch an action to change the state in the store
+}
 
 
 </script>
