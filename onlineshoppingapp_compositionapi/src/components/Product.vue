@@ -6,8 +6,14 @@
 
 
 
-        <img :src="productdetails.imageUrl" v-bind:alt="productdetails.title" width="200" height="100"
-            :style="productdetails.quantity ? '' : { opacity: 0.4 }">
+        <RouterLink :to="{
+            name: 'productdetails',
+            params: { pid: productdetails.id }
+        }">
+            <img :src="productdetails.imageUrl" v-bind:alt="productdetails.title" width="200" height="100"
+                :style="productdetails.quantity ? '' : { opacity: 0.4 }">
+
+        </RouterLink>
         <h2>
             {{ productdetails.title }}
         </h2>
@@ -67,6 +73,4 @@ function outofstock(value, text) {
 .outofstock {
     opacity: 0.4;
 }
-
-
 </style>
