@@ -10,6 +10,7 @@ import Error from "../components/Error.vue";
 import ProductDetails from "../components/ProductDetails.vue";
 import Posts from "../components/Posts.vue";
 import Dashboard from "../components/Dashboard.vue";
+import Login from "../components/Login.vue";
 
 const routes = [
   {
@@ -32,6 +33,14 @@ const routes = [
         name: "posts",
       },
     ],
+  },
+  {
+    path: "/login",
+    component: Login,
+  },
+  {
+    path: "/:pathMatch(.*)*",
+    component: Error,
   },
 ];
 
