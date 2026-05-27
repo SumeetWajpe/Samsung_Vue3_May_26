@@ -11,6 +11,7 @@ import ProductDetails from "../components/ProductDetails.vue";
 import Posts from "../components/Posts.vue";
 import Dashboard from "../components/Dashboard.vue";
 import Login from "../components/Login.vue";
+import { useAuthStore } from "../store/authStore.js";
 
 const routes = [
   {
@@ -20,6 +21,9 @@ const routes = [
   {
     path: "/dashboard",
     component: Dashboard,
+    meta: {
+      requiresAuth: true,
+    },
     children: [
       { path: "products", component: ListOfProducts, name: "products" },
       {
@@ -55,4 +59,16 @@ const routes = [
 export const router = createRouter({
   history: createWebHistory(),
   routes,
+});
+
+// to -> dest
+// from -> prev
+// next() -> navigate
+router.beforeEach((to, from, next) => {
+  const authStore = useAuthStore();
+  if (!authStore.isAuthenticated && to.meta.requiresAuth) {
+    next("/login");
+  } else {
+    next();
+  }
 });
