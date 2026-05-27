@@ -12,7 +12,7 @@
                         <RouterLink class="nav-link active" aria-current="page" to="/">Products</RouterLink>
                     </li>
                     <li class="nav-item">
-                        <RouterLink class="nav-link" to="/posts">Posts</RouterLink>
+                        <RouterLink class="nav-link" to="/dashboard/posts">Posts</RouterLink>
                     </li>
 
                 </ul>

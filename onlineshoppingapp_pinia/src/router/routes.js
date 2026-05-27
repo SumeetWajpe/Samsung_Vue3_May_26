@@ -22,7 +22,7 @@ const routes = [
     children: [
       { path: "products", component: ListOfProducts, name: "products" },
       {
-        path: "productdetails",
+        path: "productdetails/:pid",
         component: ProductDetails,
         name: "productdetails",
       },
