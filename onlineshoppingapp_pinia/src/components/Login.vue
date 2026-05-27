@@ -79,9 +79,26 @@
 
 </template>
 <script setup>
+import { ref } from "vue"
+import { useAuthStore } from '../store/authStore';
+import { useRouter } from "vue-router"
+const username = ref('');
+const password = ref('');
+const errorMessage = ref('')
 
+const authStore = useAuthStore();
+const router = useRouter();
 const handleLogin = () => {
     // handle login
+    const success = authStore.login(username.value, password.value);
+    if (success) {
+        // route to /dashboard/products ???
+        router.push("/dashboard/products")
+    } else {
+        errorMessage.value = "Invalid Credentials"
+    }
+
+
 }
 
 </script>

@@ -17,11 +17,27 @@
 
                 </ul>
             </div>
+            <div v-if="authStore.isAuthenticated">
+                <span class="text-white">Welcome,{{ authStore.username }} </span> &nbsp;
+                <button class="btn btn-warning" @click="logout">Logout</button>
+            </div>
         </div>
     </nav>
 </template>
 
 <script setup>
+import { useAuthStore } from '../store/authStore';
+import { useRouter } from "vue-router"
+const router = useRouter();
+
+const authStore = useAuthStore();
+
+const logout = () => {
+    authStore.logout();
+    router.push("/login")
+
+}
+
 
 </script>
 
