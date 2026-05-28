@@ -20,5 +20,14 @@ describe("test suites for AuthStore", () => {
     const store = useAuthStore();
     const result = store.login("admin", "admin");
     expect(result).toBe(true);
+    expect(store.isAuthenticated).toBe(true);
+    expect(store.user.username).toBe("admin");
+  });
+
+  it("fails for invalid credentials", () => {
+    const store = useAuthStore();
+    const result = store.login("wrong", "wrong");
+    expect(result).toBe(false);
+    expect(store.isAuthenticated).toBe(false);
   });
 });
