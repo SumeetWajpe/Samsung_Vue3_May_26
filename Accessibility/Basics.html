@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .divasbutton {
+        background-color: lightblue;
+        border: 2px solid red;
+        border-radius: 20px;
+        padding: 5px;
+        margin: 10px;
+        box-shadow: 5px 5px 5px grey;
+      }
+      .divasbutton:hover {
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Using Accessibility</h1>
+    </header>
+    <main>
+      This is the main content
+
+      <img
+        src="https://cdn.shopify.com/s/files/1/0533/2089/files/vuejs-tutorial.png?v=1509471047"
+        height="200"
+        width="450"
+        alt="Vue Logo"
+      />
+      <br />
+      <label for="txtName">Enter your name :</label>
+
+      <input type="text" id="txtName" />
+
+      <div style="width: 80px">
+        <div class="divasbutton" tabindex="0" role="button">Add</div>
+      </div>
+    </main>
+  </body>
+</html>

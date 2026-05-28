@@ -31,7 +31,8 @@
         <button class="btn btn-primary p-1" @click="IncrementLikes">{{ productdetails.likes }}<i
                 class="fa-regular fa-thumbs-up"></i></button>
         <button class="btn btn-warning mx-1" :disabled="!productdetails.quantity">Add to cart</button>
-        <button class="btn btn-outline-danger" @click="removeProduct">Delete <i class="fa-solid fa-trash"></i></button>
+        <button class="btn btn-outline-danger" @click="removeProduct" aria-label="Delete"> <i
+                class="fa-solid fa-trash"></i></button>
 
     </div>
 </template>
