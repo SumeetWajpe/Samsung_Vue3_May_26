@@ -18,11 +18,12 @@
 
                         <div class="mb-3">
 
-                            <label class="form-label">
+                            <label class="form-label" for="txtUsername">
                                 Username
                             </label>
 
-                            <input type="text" class="form-control" v-model="username" placeholder="Enter username" />
+                            <input type="text" class="form-control" id="txtUsername" v-model="username"
+                                placeholder="Enter username" />
 
                         </div>
 
